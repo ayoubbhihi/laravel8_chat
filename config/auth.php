@@ -45,10 +45,15 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
-        'moderator' => [
+        'moderator' =>  [
             'driver' => 'session',
             'provider' => 'moderators',
+        ],
+        'product' => [
+            'driver' => 'session',
+            'provider' => 'products'
         ]
+
     ],
 
     /*
@@ -81,14 +86,23 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Moderator::class,
         ],
+        'products' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Product::class,
+        ]
 
+
+        // 'moderators' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Moderator::class,
+        // ]
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
     ],
 
-   /*
+    /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
     |--------------------------------------------------------------------------

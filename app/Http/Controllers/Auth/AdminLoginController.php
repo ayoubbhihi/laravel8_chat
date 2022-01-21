@@ -12,10 +12,12 @@ class AdminLoginController extends Controller
     //
 
     use AuthenticatesUsers;
+    protected $redirectTo = 'admin/dashboard';
 
     public function __construct()
     {
-        $this->middleware('guest:admin , admin/dashboard')->except('logout');
+  
+        $this->middleware('guest:admin,admin/dashboard')->except('logout');
     }
 
 
@@ -29,6 +31,7 @@ class AdminLoginController extends Controller
 
     public function guard()
     {
-        return Auth::guard('admin');
+
+        return  Auth::guard('admin');
     }
 }
